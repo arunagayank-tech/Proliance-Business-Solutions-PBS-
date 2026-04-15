@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Nunito+Sans:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Nunito Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Cormorant Garamond', serif;
+
+  --color-navy: #0D1B3E;
+  --color-dark-navy: #08112A;
+  --color-gold: #B8922A;
+  --color-gold-hover: #d4ac3d;
+  --color-off-white: #F7F8FA;
+  --color-white: #FFFFFF;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-navy bg-white leading-relaxed overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    @apply font-display font-bold;
+  }
+
+  /* Accessibility: Focus states */
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-gold;
+  }
+}
+
+@layer utilities {
+  .transition-standard {
+    @apply transition-all duration-400 ease-[cubic-bezier(0.165,0.84,0.44,1)];
+  }
+
+  .text-shadow-gold {
+    text-shadow: 0 2px 4px rgba(184, 146, 42, 0.2);
+  }
+}
